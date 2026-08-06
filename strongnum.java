@@ -9,23 +9,22 @@ public class Main {
         int org = n;
         int rev = 1;
         int sum = 0;
+        int sq=n*n;
+        int place=1;
+        int result=0;
 
         while (n != 0) {
-            int digit = n % 10;
-
-            for (int i = 1; i <= digit; i++) {
-                rev = rev * i;
+            int lastdigit=n%10;
+            result=lastdigit*place+result;
+            place=place*10;
+            if(org==result){
+                System.out.println("Strong Number");
+            }
+            else{
+                n=n/10;
             }
 
-            n = n / 10;
-            sum = sum + rev;
-            rev = 1;
-        }
 
-        if (sum == org) {
-            System.out.println("Strong Number");
-        } else {
-            System.out.println("Not Strong");
         }
     }
 }
