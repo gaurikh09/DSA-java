@@ -1,12 +1,14 @@
 public class Main {
-    public static void findSubsets(String str, String ans, int index) {
-        System.out.println(ans);
-        for (int i = index;i<str.length();i++) {
-            findSubsets(str,ans+str.charAt(i),i+1);
+    public static void subsequence2(String str, int ind, String curr) {
+        System.out.println(curr);
+
+        for (int i = ind; i < str.length(); i++) {
+            subsequence2(str, i + 1, curr + str.charAt(i));
         }
     }
+
     public static void main(String[] args) {
-        String str="abc";
-        findSubsets(str,"",0);
+        String str = "abc";
+        subsequence2(str, 0, "");
     }
 }
